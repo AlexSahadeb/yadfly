@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yadfly/routes/routes.dart';
+import 'package:yadfly/screens/forgot/forgot_password.dart';
+
 import 'package:yadfly/screens/splash/splash_screen.dart';
 
 void main() {
@@ -16,9 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Yadfly',
       theme: ThemeData(backgroundColor: Colors.white),
-      home: const SplashScreen(),
-      initialRoute: splash,
-      getPages: getPage,
+      // home: const SplashScreen(),
+      // initialRoute: splash,
+      // getPages: getPage,
+      home: ForgotPassword(),
     );
   }
 }
