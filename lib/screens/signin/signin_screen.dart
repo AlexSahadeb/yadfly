@@ -4,18 +4,19 @@ import 'package:get/get.dart';
 import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
 import 'package:yadfly/routes/routes.dart';
+import 'package:yadfly/screens/signin/signin_controller.dart';
 import 'package:yadfly/screens/signup/signup_controller.dart';
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
 import 'package:yadfly/widgets/custom_social_media_button.dart';
 import 'package:yadfly/widgets/custom_text_field.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+class SigninScreen extends StatelessWidget {
+  SigninScreen({Key? key}) : super(key: key);
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  SignUpController signUpController = Get.put(SignUpController());
+  SigninController signinController = Get.put(SigninController());
   @override
   Widget build(BuildContext context) {
     SizeConfigs().init(context);
@@ -35,7 +36,7 @@ class SignUpScreen extends StatelessWidget {
                 height: getHeight(60),
               ),
               Text(
-                "Create your \nAccount",
+                "Login to your \nAccount",
                 style: headdingOne,
               ),
               SizedBox(
@@ -61,21 +62,21 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       Obx(
                         () => CustomTextField(
-                          obscureText: signUpController.offSecure.value,
-                          prefixIcon: const Icon(Icons.lock_outline),
+                          obscureText: signinController.offSecure.value,
+                          prefixIcon: Icon(Icons.lock_outline),
                           hintText: "Password",
                           filled: true,
                           fillColor: inputFillColor,
                           suffixIcon: IconButton(
                             icon: Icon(
-                              signUpController.offSecure.value
+                              signinController.offSecure.value
                                   ? Icons.visibility
                                   : Icons.visibility_off,
                               color: purpleColor,
                             ),
                             onPressed: () {
-                              signUpController.offSecure.value =
-                                  !signUpController.offSecure.value;
+                              signinController.offSecure.value =
+                                  !signinController.offSecure.value;
                             },
                           ),
                           validator: (value) {
@@ -101,10 +102,10 @@ class SignUpScreen extends StatelessWidget {
                               ),
                               activeColor: purpleColor,
                               focusColor: purpleColor,
-                              value: signUpController.check.value,
+                              value: signinController.check.value,
                               onChanged: (value) {
-                                signUpController.check.value =
-                                    !signUpController.check.value;
+                                signinController.check.value =
+                                    !signinController.check.value;
                               })),
                           Text(
                             "Remember Me",
@@ -121,15 +122,30 @@ class SignUpScreen extends StatelessWidget {
                       CustomButton(
                           color: brightLilacColor,
                           textColor: primaryWhiteColor,
-                          buttonText: "Sign Up",
+                          buttonText: "Sign in",
                           onPressed: () {
-                            Get.toNamed(forgotmethod);
-                            // if (_formKey.currentState!.validate()) {
-                            //   Get.toNamed(forgotmethod);
-                            // }
+                            if (_formKey.currentState!.validate()) {}
                           })
                     ],
                   )),
+              SizedBox(
+                height: getHeight(20),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed(forgotscreen);
+                  },
+                  child: Text(
+                    "Forgot the password?",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: getFont(16),
+                        color: purpleColor),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: getHeight(50),
               ),
@@ -186,15 +202,15 @@ class SignUpScreen extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(children: [
                     const TextSpan(
-                        text: "Already have an account? ",
+                        text: "Don’t have an account? ",
                         style: TextStyle(color: Color(0xFF9E9E9E))),
                     TextSpan(
-                        text: "Sign in",
+                        text: "Sign up",
                         style: const TextStyle(
                             color: purpleColor, fontWeight: FontWeight.bold),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Get.toNamed(signin);
+                            Get.toNamed(signup);
                           })
                   ]),
                 ),

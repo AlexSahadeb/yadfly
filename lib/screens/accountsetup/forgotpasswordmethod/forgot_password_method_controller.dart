@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class ForgotController extends GetxController {
+class ForgotPasswordMethodController extends GetxController {
   var selected = true.obs;
   var isselected = true.obs;
 }

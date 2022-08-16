@@ -13,13 +13,14 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfigs().init(context);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
               elevation: 0,
               backgroundColor: Colors.transparent,
-              iconTheme: IconThemeData(color: raisinBlackColor)),
+              iconTheme: const IconThemeData(color: raisinBlackColor)),
           body: Padding(
             padding: const EdgeInsets.all(20),
             child: SingleChildScrollView(
@@ -28,8 +29,8 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     "assets/imgs/appLogo.png",
-                    height: getHeight(82),
-                    width: getWidth(246),
+                    height: 82,
+                    width: 246,
                   ),
                   SizedBox(
                     height: getHeight(100),
@@ -79,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                       SizedBox(
                         width: getWidth(2),
                       ),
-                      Text("or"),
+                      const Text("or"),
                       SizedBox(
                         width: getWidth(2),
                       ),
@@ -97,7 +98,9 @@ class WelcomeScreen extends StatelessWidget {
                       color: purpleColor,
                       textColor: primaryWhiteColor,
                       buttonText: "Sign in with password",
-                      onPressed: () {}),
+                      onPressed: () {
+                        Get.toNamed(signin);
+                      }),
                   SizedBox(
                     height: getHeight(50),
                   ),
@@ -108,7 +111,8 @@ class WelcomeScreen extends StatelessWidget {
                           style: TextStyle(color: Color(0xFF9E9E9E))),
                       TextSpan(
                           text: "Sign up",
-                          style: const TextStyle(color: purpleColor),
+                          style: const TextStyle(
+                              color: purpleColor, fontWeight: FontWeight.bold),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               //print('Sign up');

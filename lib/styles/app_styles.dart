@@ -12,10 +12,17 @@ TextStyle headdingTwo = TextStyle(
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w700,
     color: raisinBlackColor);
-TextStyle headdingThree = TextStyle();
+TextStyle headdingThree = TextStyle(
+    fontSize: getFont(24),
+    fontWeight: FontWeight.w700,
+    color: raisinBlackColor);
 TextStyle headdingFour = TextStyle(
     fontSize: getFont(16),
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w400,
     color: graniteColor);
 TextStyle headdingFive = TextStyle();
+TextStyle headding6 = TextStyle(
+    fontSize: getFont(16),
+    fontWeight: FontWeight.w700,
+    color: raisinBlackColor);

@@ -41,12 +41,14 @@ class OnBordingScreen extends StatelessWidget {
               SizedBox(
                 height: getHeight(50),
               ),
-              Center(
-                child: Image.asset(
-                  onBodingController
-                      .onbodingImgs[onBodingController.currentIndex.toInt()],
-                  height: getHeight(260),
-                  width: getWidth(207),
+              Obx(
+                () => Center(
+                  child: Image.asset(
+                    onBodingController
+                        .onbodingImgs[onBodingController.currentIndex.toInt()],
+                    height: getHeight(260),
+                    width: getWidth(207),
+                  ),
                 ),
               ),
               SizedBox(

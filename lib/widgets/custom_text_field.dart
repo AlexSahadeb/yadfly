@@ -6,7 +6,8 @@ class CustomTextField extends StatelessWidget {
   TextInputType? keyboardType;
   TextInputAction? textInputAction;
   bool obscureText;
-
+  bool autocurrent;
+  final ValueChanged<String>? onChanged;
   String? Function(String?)? validator;
   String? hintText;
   Widget? suffixIcon;
@@ -16,7 +17,9 @@ class CustomTextField extends StatelessWidget {
 
   CustomTextField({
     Key? key,
+    this.autocurrent = false,
     this.controller,
+    this.onChanged,
     this.validator,
     this.obscureText = false,
     this.keyboardType,
@@ -31,16 +34,18 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autocorrect: autocurrent,
       controller: controller,
       obscureText: obscureText,
       validator: validator,
+      onChanged: onChanged,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none
-            
-          ),
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide.none),
           suffixIcon: suffixIcon,
+          suffixStyle: TextStyle(fontSize: getWidth(17)),
           hintText: hintText,
           filled: filled,
           fillColor: fillColor,

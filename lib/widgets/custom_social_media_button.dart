@@ -20,7 +20,7 @@ class CustomSocialMediaButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: double.maxFinite,
-        height: getHeight(70),
+        height: 70,
         decoration: BoxDecoration(
             color: otpFillColor,
             border: Border.all(width: 2, color: buttonShapColor),
@@ -44,24 +44,31 @@ class CustomSocialMediaButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
 
-    // return ElevatedButton(
-    //     style: ElevatedButton.styleFrom(
-    //         elevation: 0,
-    //         primary: color,
-    //         minimumSize: const Size(380, 55),
-    //         maximumSize: const Size(380, 55),
-    //         shape: RoundedRectangleBorder(
-    //             borderRadius: BorderRadius.circular(30))),
-    //     child: Padding(
-    //       padding: const EdgeInsets.all(15),
-    //       child: Text(
-    //         buttonText,
-    //         style: TextStyle(
-    //           fontSize: 16,
-    //         ),
-    //       ),
-    //     ),
-    //     onPressed: onPressed);
+class SocialMediaButton extends StatelessWidget {
+  String image;
+  Function() onPressed;
+
+  SocialMediaButton({Key? key, required this.onPressed, required this.image})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: 65,
+        height: 70,
+        decoration: BoxDecoration(
+            color: otpFillColor,
+            border: Border.all(width: 2, color: buttonShapColor),
+            borderRadius: BorderRadius.circular(15)),
+        child: Center(
+          child: Image.asset(image),
+        ),
+      ),
+    );
   }
 }
