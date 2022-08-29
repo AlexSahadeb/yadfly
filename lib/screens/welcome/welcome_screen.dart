@@ -33,14 +33,14 @@ class WelcomeScreen extends StatelessWidget {
                     width: 246,
                   ),
                   SizedBox(
-                    height: getHeight(100),
+                    height: getHeight(80),
                   ),
                   Text(
                     "Let’s you in",
                     style: headdingOne,
                   ),
                   SizedBox(
-                    height: getHeight(40),
+                    height: getHeight(35),
                   ),
                   CustomSocialMediaButton(
                       buttonText: "Continue with Facebook",
@@ -102,7 +102,7 @@ class WelcomeScreen extends StatelessWidget {
                         Get.toNamed(signin);
                       }),
                   SizedBox(
-                    height: getHeight(50),
+                    height: getHeight(45),
                   ),
                   RichText(
                     text: TextSpan(children: [

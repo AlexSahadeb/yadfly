@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
 import 'package:yadfly/routes/routes.dart';
-import 'package:yadfly/screens/accountsetup/forgotpasswordmethod/forgot_password_method_controller.dart';
+import 'package:yadfly/screens/accountsetup/forgotpasswordmethod/account_create_step_controller.dart';
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
 
 class ForgotPasswordMethodScreen extends StatelessWidget {
   ForgotPasswordMethodScreen({Key? key}) : super(key: key);
-  ForgotPasswordMethodController forgotPasswordMethodController =
-      Get.put(ForgotPasswordMethodController());
+  AccountCreateStepController accountCreateStepController =
+      Get.put(AccountCreateStepController());
   @override
   Widget build(BuildContext context) {
     SizeConfigs().init(context);
@@ -21,8 +21,7 @@ class ForgotPasswordMethodScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.transparent,
             iconTheme: const IconThemeData(color: raisinBlackColor)),
-        bottomNavigationBar: Container(
-          color: primaryWhiteColor,
+        bottomNavigationBar: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           child: CustomButton(
               color: purpleColor,
@@ -56,20 +55,21 @@ class ForgotPasswordMethodScreen extends StatelessWidget {
                   Obx(
                     () => GestureDetector(
                       onTap: () {
-                        forgotPasswordMethodController.isselected.value =
-                            !forgotPasswordMethodController.isselected.value;
+                        accountCreateStepController.isselected.value =
+                            !accountCreateStepController.isselected.value;
                       },
                       child: Container(
                         height: getHeight(140),
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                                 width: 2,
-                                color: forgotPasswordMethodController
-                                        .isselected.value
-                                    ? Color(0xFFFFF1F3)
-                                    : Color(0xFFA020F0))),
+                                color: accountCreateStepController
+                                            .isselected.value ==
+                                        false
+                                    ? const Color(0xFFFFF1F3)
+                                    : const Color(0xFFA020F0))),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -105,21 +105,22 @@ class ForgotPasswordMethodScreen extends StatelessWidget {
                   ),
                   Obx(
                     () => GestureDetector(
-                      onTap: () {
-                        forgotPasswordMethodController.selected.value =
-                            !forgotPasswordMethodController.selected.value;
-                      },
+                      onTap: () => accountCreateStepController.isselected.value
+                          ? accountCreateStepController.isselected.value =
+                              !accountCreateStepController.isselected.value
+                          : null,
                       child: Container(
                         height: getHeight(140),
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                                 width: 2,
-                                color: forgotPasswordMethodController
-                                        .selected.value
-                                    ? Color(0xFFFFF1F3)
-                                    : Color(0xFFA020F0))),
+                                color: accountCreateStepController
+                                            .isselected.value ==
+                                        true
+                                    ? const Color(0xFFFFF1F3)
+                                    : const Color(0xFFA020F0))),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [

@@ -30,16 +30,14 @@ class SignUpScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: getHeight(60),
-              ),
               Text(
                 "Create your \nAccount",
                 style: headdingOne,
               ),
               SizedBox(
-                height: getHeight(50),
+                height: getHeight(60),
               ),
               Form(
                   key: _formKey,
@@ -88,32 +86,29 @@ class SignUpScreen extends StatelessWidget {
                       SizedBox(
                         height: getHeight(15),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Obx(() => Checkbox(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
-                              side: MaterialStateBorderSide.resolveWith(
-                                (states) => const BorderSide(
-                                    width: 2, color: purpleColor),
-                              ),
-                              activeColor: purpleColor,
-                              focusColor: purpleColor,
-                              value: signUpController.check.value,
-                              onChanged: (value) {
-                                signUpController.check.value =
-                                    !signUpController.check.value;
-                              })),
-                          Text(
-                            "Remember Me",
-                            style: TextStyle(
-                                color: raisinBlackColor,
-                                fontSize: getFont(14),
-                                fontWeight: FontWeight.w600),
-                          )
-                        ],
+                      Obx(
+                        () => CheckboxListTile(
+                          value: signUpController.valueChack.value,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                          side: MaterialStateBorderSide.resolveWith(
+                            (states) =>
+                                const BorderSide(width: 2, color: purpleColor),
+                          ),
+                          onChanged: (value) {
+                            if (signUpController.valueChack.value == false) {
+                              signUpController.valueChack.value = true;
+                            } else {
+                              signUpController.valueChack.value = false;
+                            }
+                          },
+                          title: const Text('Remember Me',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 15)),
+                          controlAffinity: ListTileControlAffinity.leading,
+                          activeColor: purpleColor,
+                        ),
                       ),
                       SizedBox(
                         height: getHeight(15),
@@ -156,7 +151,7 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: getHeight(25),
+                height: getHeight(35),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -179,7 +174,7 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: getHeight(40),
+                height: getHeight(80),
               ),
               Align(
                 alignment: Alignment.center,

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:country_code_picker/country_code.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
+import 'package:yadfly/routes/routes.dart';
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
 import 'package:yadfly/widgets/custom_text_field.dart';
@@ -18,8 +20,9 @@ class ProfileFromScreen extends StatelessWidget {
 
   XFile? _chooseImage;
   chooseImageFromGallary() async {
-    final ImagePicker _picker = ImagePicker();
-    _chooseImage = await _picker.pickImage(source: ImageSource.gallery);
+    final ImagePicker picker = ImagePicker();
+    _chooseImage = await picker.pickImage(source: ImageSource.gallery);
+    _chooseImage = _chooseImage;
   }
 
   _selectedDateFromPicker(BuildContext context) async {
@@ -62,21 +65,27 @@ class ProfileFromScreen extends StatelessWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                        child: _chooseImage == null
-                            ? GestureDetector(
+                        child: Material(
+                            child: GestureDetector(
                                 onTap: () => chooseImageFromGallary(),
                                 child: CircleAvatar(
                                   backgroundColor: primaryWhiteColor,
-                                  backgroundImage:
-                                      AssetImage("assets/imgs/profile1.png"),
+                                  child: ClipOval(
+                                    child: SizedBox(
+                                        height: 180,
+                                        width: 180,
+                                        child: (_chooseImage == null)
+                                            ? Image.asset(
+                                                "assets/imgs/profile1.png")
+                                            : Image.file(
+                                                File(
+                                                  _chooseImage!.path,
+                                                ),
+                                                fit: BoxFit.cover,
+                                              )),
+                                  ),
                                   radius: 60,
-                                ))
-                            : Image.file(
-                                File(
-                                  _chooseImage!.path,
-                                ),
-                                fit: BoxFit.cover,
-                              )),
+                                )))),
                     SizedBox(
                       height: getHeight(20),
                     ),
@@ -139,6 +148,7 @@ class ProfileFromScreen extends StatelessWidget {
                         fillColor: Colors.grey[200],
                         filled: true,
                         keyboardType: TextInputType.datetime,
+                        readOnly: true,
                         controller: dbController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -210,19 +220,153 @@ class ProfileFromScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        color: primaryWhiteColor,
-        margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-        height: getHeight(60),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: CustomButton(
             color: purpleColor,
             textColor: primaryWhiteColor,
             buttonText: "Continue",
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                print("Next Page");
-              }
+              //if (_formKey.currentState!.validate()) {
+              Get.toNamed(category);
+              //}
             }),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.red,
+            toolbarHeight: 500,
+            flexibleSpace: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+                Text("data"),
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) => Column(
+                  children: [
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                    Text("data"),
+                  ],
+                )),
+          )
+        ],
       ),
     );
   }

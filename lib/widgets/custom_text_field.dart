@@ -14,28 +14,33 @@ class CustomTextField extends StatelessWidget {
   Widget? prefixIcon;
   bool? filled;
   Color? fillColor;
-
-  CustomTextField({
-    Key? key,
-    this.autocurrent = false,
-    this.controller,
-    this.onChanged,
-    this.validator,
-    this.obscureText = false,
-    this.keyboardType,
-    this.textInputAction,
-    this.suffixIcon,
-    this.hintText,
-    this.prefixIcon,
-    this.fillColor,
-    this.filled = false,
-  }) : super(key: key);
+  bool readOnly;
+  bool autofocus;
+  CustomTextField(
+      {Key? key,
+      this.autocurrent = false,
+      this.controller,
+      this.onChanged,
+      this.validator,
+      this.obscureText = false,
+      this.keyboardType,
+      this.textInputAction,
+      this.suffixIcon,
+      this.hintText,
+      this.prefixIcon,
+      this.fillColor,
+      this.filled = false,
+      this.readOnly = false,
+      this.autofocus = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: autofocus,
       autocorrect: autocurrent,
       controller: controller,
+      readOnly: readOnly,
       obscureText: obscureText,
       validator: validator,
       onChanged: onChanged,

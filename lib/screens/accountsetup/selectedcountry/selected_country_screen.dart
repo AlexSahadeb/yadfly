@@ -9,10 +9,13 @@ import 'package:yadfly/widgets/custom_main_button.dart';
 import 'package:yadfly/widgets/custom_text_field.dart';
 
 class SelectedCountryScreen extends StatelessWidget {
-  SelectedCountryScreen({Key? key}) : super(key: key);
+  SelectedCountryScreen({
+    Key? key,
+  }) : super(key: key);
   final searchEditingController = TextEditingController();
   SelectedCountryController selectedCountryController =
       Get.put(SelectedCountryController());
+
   @override
   Widget build(BuildContext context) {
     SizeConfigs().init(context);
@@ -79,8 +82,8 @@ class SelectedCountryScreen extends StatelessWidget {
                                         !selectedCountryController.check.value;
                                   },
                                   leading: Container(
-                                    height: getHeight(30),
-                                    width: getWidth(30),
+                                    height: 30,
+                                    width: 30,
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(10)),

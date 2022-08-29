@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:yadfly/constens/size_configs.dart';
 import 'package:yadfly/routes/routes.dart';
 import 'package:yadfly/screens/forgot/controller/forgot_controller.dart';
-import 'package:yadfly/screens/verify/verify_screen.dart';
+
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
 
@@ -12,7 +12,7 @@ import '../../constens/app_colors.dart';
 class ForgotPassword extends StatelessWidget {
   ForgotPassword({Key? key}) : super(key: key);
 
-  ForgotController _forgotController = Get.put(ForgotController());
+  final _forgotController = Get.put(ForgotController());
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ForgotPassword extends StatelessWidget {
           style: headdingThree,
         ),
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: CustomButton(
             color: purpleColor,
@@ -38,6 +38,7 @@ class ForgotPassword extends StatelessWidget {
               Get.toNamed(verify);
             }),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -48,8 +49,8 @@ class ForgotPassword extends StatelessWidget {
               Center(
                   child: Image.asset(
                 "assets/imgs/forget.png",
-                height: getHeight(200),
-                width: getWidth(305),
+                height: 200,
+                width: 305,
               )),
               SizedBox(
                 height: getHeight(53),
@@ -64,8 +65,8 @@ class ForgotPassword extends StatelessWidget {
               Obx(
                 () => GestureDetector(
                   onTap: () {
-                    _forgotController.isselected.value =
-                        !_forgotController.isselected.value;
+                    _forgotController.isSelected.value =
+                        !_forgotController.isSelected.value;
                   },
                   child: Container(
                     height: getHeight(140),
@@ -74,7 +75,7 @@ class ForgotPassword extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                             width: 2,
-                            color: _forgotController.isselected.value
+                            color: _forgotController.isSelected.value == false
                                 ? const Color(0xFFFFF1F3)
                                 : const Color(0xFFA020F0))),
                     child: Row(
@@ -112,10 +113,10 @@ class ForgotPassword extends StatelessWidget {
               ),
               Obx(
                 () => GestureDetector(
-                  onTap: () {
-                    _forgotController.selected.value =
-                        !_forgotController.selected.value;
-                  },
+                  onTap: () => _forgotController.isSelected.value
+                      ? _forgotController.isSelected.value =
+                          !_forgotController.isSelected.value
+                      : null,
                   child: Container(
                     height: getHeight(140),
                     padding: const EdgeInsets.all(5),
@@ -123,7 +124,7 @@ class ForgotPassword extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                             width: 2,
-                            color: _forgotController.selected.value
+                            color: _forgotController.isSelected.value
                                 ? const Color(0xFFFFF1F3)
                                 : const Color(0xFFA020F0))),
                     child: Row(

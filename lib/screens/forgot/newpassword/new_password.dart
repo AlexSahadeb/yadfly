@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
+import 'package:yadfly/routes/routes.dart';
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
 import 'package:yadfly/widgets/custom_text_field.dart';
-import '../../constens/app_colors.dart';
 import 'controller/new_password_controller.dart';
 
 class NewPassword extends StatelessWidget {
@@ -40,8 +41,8 @@ class NewPassword extends StatelessWidget {
               ),
               Image.asset(
                 'assets/imgs/newpassword.png',
-                height: getHeight(220),
-                width: getWidth(309),
+                height: 190,
+                width: 290,
               ),
               SizedBox(
                 height: getHeight(70),
@@ -139,95 +140,89 @@ class NewPassword extends StatelessWidget {
                       SizedBox(
                         height: getHeight(26),
                       ),
-                      Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Obx(() => Checkbox(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                                side: MaterialStateBorderSide.resolveWith(
-                                  (states) => const BorderSide(
-                                      width: 2, color: purpleColor),
-                                ),
-                                activeColor: purpleColor,
-                                focusColor: purpleColor,
-                                value: _newPasswordController.isCheck.value,
-                                onChanged: (value) {
-                                  _newPasswordController.isCheck.value =
-                                      !_newPasswordController.isCheck.value;
-                                })),
-                            Text(
-                              "Remember Me",
+                      Obx(
+                        () => CheckboxListTile(
+                          value: _newPasswordController.valueChack.value,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                          side: MaterialStateBorderSide.resolveWith(
+                            (states) =>
+                                const BorderSide(width: 2, color: purpleColor),
+                          ),
+                          onChanged: (value) {
+                            if (_newPasswordController.valueChack.value ==
+                                false) {
+                              _newPasswordController.valueChack.value = true;
+                            } else {
+                              _newPasswordController.valueChack.value = false;
+                            }
+                          },
+                          title: const Text('Remember Me',
                               style: TextStyle(
-                                  color: raisinBlackColor,
-                                  fontSize: getFont(14),
-                                  fontWeight: FontWeight.w600),
-                            )
-                          ],
+                                  fontWeight: FontWeight.w600, fontSize: 15)),
+                          controlAffinity: ListTileControlAffinity.leading,
+                          activeColor: purpleColor,
                         ),
                       ),
-                      SizedBox(
-                        height: getHeight(85),
-                      ),
-                      Center(
-                        child: CustomButton(
-                            color: purpleColor,
-                            textColor: primaryWhiteColor,
-                            buttonText: "Verify",
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                Get.defaultDialog(
-                                    title: "",
-                                    content: SingleChildScrollView(
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/imgs/group_alart.png',
-                                            height: getHeight(252),
-                                            width: getHeight(252),
-                                          ),
-                                          SizedBox(
-                                            height: getHeight(30),
-                                          ),
-                                          const Text(
-                                            "Congratulation!",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                color: purpleColor),
-                                          ),
-                                          SizedBox(
-                                            height: getHeight(16),
-                                          ),
-                                          const Text(
-                                            "Your account is ready to use",
-                                            style: TextStyle(
-                                                fontSize: 18,
-                                                color: raisinBlackColor),
-                                          ),
-                                          SizedBox(
-                                            height: getHeight(30),
-                                          ),
-                                          CustomButton(
-                                              color: purpleColor,
-                                              textColor: primaryWhiteColor,
-                                              buttonText: "Go to HomePages",
-                                              onPressed: () {
-                                                print("Go to HomePage");
-                                              })
-                                        ],
-                                      ),
-                                    ));
-                              }
-                            }),
-                      )
                     ],
                   ))
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Container(
+        color: primaryWhiteColor,
+        padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+        child: CustomButton(
+            color: purpleColor,
+            textColor: primaryWhiteColor,
+            buttonText: "Verify",
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                Get.defaultDialog(
+                    title: "",
+                    content: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/imgs/group_alart.png',
+                            height: getHeight(252),
+                            width: getHeight(252),
+                          ),
+                          SizedBox(
+                            height: getHeight(30),
+                          ),
+                          const Text(
+                            "Congratulation!",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 24,
+                                color: purpleColor),
+                          ),
+                          SizedBox(
+                            height: getHeight(16),
+                          ),
+                          const Text(
+                            "Your account is ready to use",
+                            style: TextStyle(
+                                fontSize: 18, color: raisinBlackColor),
+                          ),
+                          SizedBox(
+                            height: getHeight(30),
+                          ),
+                          CustomButton(
+                              color: purpleColor,
+                              textColor: primaryWhiteColor,
+                              buttonText: "Go to HomePages",
+                              onPressed: () {
+                                Get.toNamed(mainNavbar);
+                              })
+                        ],
+                      ),
+                    ));
+              }
+            }),
       ),
     );
   }

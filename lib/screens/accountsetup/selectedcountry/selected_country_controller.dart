@@ -46,5 +46,5 @@ class SelectedCountryController extends GetxController {
   String search = "";
 
   var check = false.obs;
-  // var offSecure = true.obs;
+  var isActive = 0.obs;
 }

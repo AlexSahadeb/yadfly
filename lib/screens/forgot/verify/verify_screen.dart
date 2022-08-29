@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
 import 'package:yadfly/routes/routes.dart';
-import 'package:yadfly/screens/newpassword/new_password.dart';
 import 'package:yadfly/styles/app_styles.dart';
 import 'package:yadfly/widgets/custom_main_button.dart';
-
-import '../../constens/app_colors.dart';
 
 class VerifyScreen extends StatelessWidget {
   const VerifyScreen({Key? key}) : super(key: key);
@@ -37,7 +34,6 @@ class VerifyScreen extends StatelessWidget {
               SizedBox(
                 height: getHeight(250.5),
               ),
-
               Align(
                 alignment: Alignment.center,
                 child: RichText(
@@ -136,73 +132,6 @@ class VerifyScreen extends StatelessWidget {
                   ),
                 ],
               )),
-              // Row(
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Container(
-              //       width: 78,
-              //       height: 61,
-              //       decoration: BoxDecoration(
-              //           color: Colors.grey,
-              //           borderRadius: BorderRadius.circular(5),
-              //           border: Border.all(color: purpleColor, width: 2)),
-              //       child: Center(
-              //           child: Text(
-              //         "8",
-              //         style: headdingThree,
-              //       )),
-              //     ),
-              //     SizedBox(
-              //       width: getWidth(16),
-              //     ),
-              //     Container(
-              //       width: 78,
-              //       height: 61,
-              //       decoration: BoxDecoration(
-              //           color: Colors.grey,
-              //           borderRadius: BorderRadius.circular(5),
-              //           border: Border.all(color: purpleColor, width: 2)),
-              //       child: Center(
-              //           child: Text(
-              //         "5",
-              //         style: headdingThree,
-              //       )),
-              //     ),
-              //     SizedBox(
-              //       width: getWidth(16),
-              //     ),
-              //     Container(
-              //       width: 78,
-              //       height: 61,
-              //       decoration: BoxDecoration(
-              //           color: Colors.grey,
-              //           borderRadius: BorderRadius.circular(5),
-              //           border: Border.all(color: purpleColor, width: 2)),
-              //       child: Center(
-              //           child: Text(
-              //         "7",
-              //         style: headdingThree,
-              //       )),
-              //     ),
-              //     SizedBox(
-              //       width: getWidth(16),
-              //     ),
-              //     Container(
-              //       width: 78,
-              //       height: 61,
-              //       decoration: BoxDecoration(
-              //           color: Colors.grey,
-              //           borderRadius: BorderRadius.circular(5),
-              //           border: Border.all(color: purpleColor, width: 2)),
-              //       child: Center(
-              //           child: Text(
-              //         "9",
-              //         style: headdingThree,
-              //       )),
-              //     ),
-              //   ],
-              // ),
               SizedBox(
                 height: getHeight(60),
               ),
@@ -225,16 +154,20 @@ class VerifyScreen extends StatelessWidget {
               SizedBox(
                 height: getHeight(241),
               ),
-              CustomButton(
-                  color: purpleColor,
-                  textColor: primaryWhiteColor,
-                  buttonText: "Verify",
-                  onPressed: () {
-                    Get.toNamed(newpassword);
-                  })
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Container(
+        color: primaryWhiteColor,
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        child: CustomButton(
+            color: purpleColor,
+            textColor: primaryWhiteColor,
+            buttonText: "Verify",
+            onPressed: () {
+              Get.toNamed(newpassword);
+            }),
       ),
     );
   }
