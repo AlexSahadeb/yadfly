@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yadfly/routes/routes.dart';
 import 'package:yadfly/screens/mainnavbar/components/search/itemsearch/search_dalegate_controller.dart';
 import 'package:yadfly/widgets/custom_text_field.dart';
@@ -74,8 +75,10 @@ class SearchDalegateScreen extends StatelessWidget {
                           subtitle: Text(searchDaegateController
                               .foundItems.value[index]["subtitle"]),
                           trailing: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.cancel_outlined)),
+                            onPressed: () {},
+                            icon: SvgPicture.asset(
+                                "assets/icons/Close_Square_outline.svg"),
+                          ),
                         ))))
           ],
         ),

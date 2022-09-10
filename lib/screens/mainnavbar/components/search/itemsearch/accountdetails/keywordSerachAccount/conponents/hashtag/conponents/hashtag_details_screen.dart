@@ -41,62 +41,64 @@ class HashTagDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const Center(
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://cdn.mos.cms.futurecdn.net/Pn3JL6Dvj374auve6Vac3n.jpg'),
-                  radius: 40,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://cdn.mos.cms.futurecdn.net/Pn3JL6Dvj374auve6Vac3n.jpg'),
+                    radius: 40,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: getHeight(12),
-              ),
-              Text(
-                "217M Photos",
-                style: headdingFour,
-              ),
-              SizedBox(
-                height: getHeight(24),
-              ),
-              CustomButton(
-                  color: purpleColor,
-                  textColor: primaryWhiteColor,
-                  buttonText: 'Follow',
-                  onPressed: () {}),
-              SizedBox(
-                height: getHeight(20),
-              ),
-              Container(
-                color: primaryWhiteColor,
-                child: const TabBar(
-                    unselectedLabelColor: Colors.grey,
-                    indicatorColor: purpleColor,
-                    indicatorWeight: 3,
-                    labelColor: purpleColor,
-                    tabs: [
-                      Tab(
-                        text: "Top",
-                      ),
-                      Tab(
-                        text: "Recent",
-                      ),
-                      Tab(text: "Shorts"),
-                    ]),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 405,
-                child: TabBarView(children: [
-                  TopScreen(),
-                  const RecentScreen(),
-                  ShortScreens()
-                ]),
-              )
-            ],
+                SizedBox(
+                  height: getHeight(12),
+                ),
+                Text(
+                  "217M Photos",
+                  style: headdingFour,
+                ),
+                SizedBox(
+                  height: getHeight(24),
+                ),
+                CustomButton(
+                    color: AppColors.purpleColor,
+                    textColor: AppColors.primaryWhiteColor,
+                    buttonText: 'Follow',
+                    onPressed: () {}),
+                SizedBox(
+                  height: getHeight(20),
+                ),
+                Container(
+                  color: AppColors.primaryWhiteColor,
+                  child: const TabBar(
+                      unselectedLabelColor: Colors.grey,
+                      indicatorColor: AppColors.purpleColor,
+                      indicatorWeight: 3,
+                      labelColor: AppColors.purpleColor,
+                      tabs: [
+                        Tab(
+                          text: "Top",
+                        ),
+                        Tab(
+                          text: "Recent",
+                        ),
+                        Tab(text: "Shorts"),
+                      ]),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 405,
+                  child: TabBarView(children: [
+                    TopScreen(),
+                    const RecentScreen(),
+                    ShortScreens()
+                  ]),
+                )
+              ],
+            ),
           ),
         ),
       ),

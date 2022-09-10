@@ -89,7 +89,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         prefixIcon: const Icon(Icons.email_outlined),
                         hintText: "Email",
                         filled: true,
-                        fillColor: inputFillColor,
+                        fillColor: AppColors.inputFillColor,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Please enter your Email";
@@ -106,13 +106,13 @@ class _SigninScreenState extends State<SigninScreen> {
                           prefixIcon: Icon(Icons.lock_outline),
                           hintText: "Password",
                           filled: true,
-                          fillColor: inputFillColor,
+                          fillColor: AppColors.inputFillColor,
                           suffixIcon: IconButton(
                             icon: Icon(
                               signinController.offSecure.value
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: purpleColor,
+                              color: AppColors.purpleColor,
                             ),
                             onPressed: () {
                               signinController.offSecure.value =
@@ -136,8 +136,8 @@ class _SigninScreenState extends State<SigninScreen> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           side: MaterialStateBorderSide.resolveWith(
-                            (states) =>
-                                const BorderSide(width: 2, color: purpleColor),
+                            (states) => const BorderSide(
+                                width: 2, color: AppColors.purpleColor),
                           ),
                           onChanged: (value) {
                             if (signinController.valueChack.value == false) {
@@ -152,7 +152,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 fontWeight: FontWeight.w600, fontSize: 15),
                           ),
                           controlAffinity: ListTileControlAffinity.leading,
-                          activeColor: purpleColor,
+                          activeColor: AppColors.purpleColor,
                         ),
                       ),
 
@@ -171,8 +171,8 @@ class _SigninScreenState extends State<SigninScreen> {
                       //         : null,
                       //     child: Text("data")),
                       CustomButton(
-                          color: brightLilacColor,
-                          textColor: primaryWhiteColor,
+                          color: AppColors.brightLilacColor,
+                          textColor: AppColors.primaryWhiteColor,
                           buttonText: "Sign in",
                           onPressed: () {
                             //  if (_formKey.currentState!.validate()) {}
@@ -204,7 +204,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: getFont(16),
-                        color: purpleColor),
+                        color: AppColors.purpleColor),
                   ),
                 ),
               ),
@@ -269,7 +269,8 @@ class _SigninScreenState extends State<SigninScreen> {
                     TextSpan(
                         text: "Sign up",
                         style: const TextStyle(
-                            color: purpleColor, fontWeight: FontWeight.bold),
+                            color: AppColors.purpleColor,
+                            fontWeight: FontWeight.bold),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Get.toNamed(signup);

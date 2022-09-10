@@ -22,8 +22,8 @@ class CustomSocialMediaButton extends StatelessWidget {
         width: double.maxFinite,
         height: 70,
         decoration: BoxDecoration(
-            color: otpFillColor,
-            border: Border.all(width: 2, color: buttonShapColor),
+            color: AppColors.otpFillColor,
+            border: Border.all(width: 2, color: AppColors.buttonShapColor),
             borderRadius: BorderRadius.circular(15)),
         child: Center(
           child: Row(
@@ -62,8 +62,8 @@ class SocialMediaButton extends StatelessWidget {
         width: 65,
         height: 70,
         decoration: BoxDecoration(
-            color: otpFillColor,
-            border: Border.all(width: 2, color: buttonShapColor),
+            color: AppColors.otpFillColor,
+            border: Border.all(width: 2, color: AppColors.buttonShapColor),
             borderRadius: BorderRadius.circular(15)),
         child: Center(
           child: Image.asset(image),

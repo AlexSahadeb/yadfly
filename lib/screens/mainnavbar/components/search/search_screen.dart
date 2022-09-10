@@ -53,7 +53,7 @@ class SearchScreen extends StatelessWidget {
                 height: getHeight(25),
               ),
               SizedBox(
-                height: getHeight(40),
+                height: 35,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
@@ -73,8 +73,8 @@ class SearchScreen extends StatelessWidget {
                                     searchController.currentIndex.value == index
                                         ? const Color(0xFFA020F0)
                                         : const Color(0xFFf1f1f1f1),
-                                border:
-                                    Border.all(width: 2, color: purpleColor)),
+                                border: Border.all(
+                                    width: 2, color: AppColors.purpleColor)),
                             child: Center(
                                 child: Text(
                               searchController.items[index],

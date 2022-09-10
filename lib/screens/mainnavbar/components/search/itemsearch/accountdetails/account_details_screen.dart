@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 import 'package:yadfly/constens/app_colors.dart';
 import 'package:yadfly/constens/size_configs.dart';
+import 'package:yadfly/routes/routes.dart';
 import 'package:yadfly/styles/app_styles.dart';
 
 class AccounDetailsScreen extends StatelessWidget {
@@ -61,10 +63,8 @@ class AccounDetailsScreen extends StatelessWidget {
                                     onTap: () {
                                       print('Block');
                                     },
-                                    leading: const Icon(
-                                      Icons.block,
-                                      color: Color(0xFF424242),
-                                    ),
+                                    leading: SvgPicture.asset(
+                                        "assets/icons/Close_Square_outline.svg"),
                                     title: Text("Block", style: headding6)),
                                 ListTile(
                                     onTap: () {
@@ -80,10 +80,12 @@ class AccounDetailsScreen extends StatelessWidget {
                                     onTap: () {
                                       print('Copy Profile URL');
                                     },
-                                    leading: const Icon(
-                                      Icons.contact_page_outlined,
-                                      color: Color(0xFF424242),
-                                    ),
+                                    leading: SvgPicture.asset(
+                                        "assets/icons/Document_outline.svg"),
+                                    //  const Icon(
+                                    //   Icons.contact_page_outlined,
+                                    //   color: Color(0xFF424242),
+                                    // ),
                                     title: Text(
                                       "Copy profile URL",
                                       style: headding6,
@@ -92,10 +94,12 @@ class AccounDetailsScreen extends StatelessWidget {
                                     onTap: () {
                                       print('Share this Profile');
                                     },
-                                    leading: const Icon(
-                                      Icons.send_outlined,
-                                      color: Color(0xFF424242),
-                                    ),
+                                    leading: SvgPicture.asset(
+                                        "assets/icons/Send_outlined.svg"),
+                                    //  const Icon(
+                                    //   Icons.send_outlined,
+                                    //   color: Color(0xFF424242),
+                                    // ),
                                     title: Text(
                                       "Share this profile",
                                       style: headding6,
@@ -120,7 +124,7 @@ class AccounDetailsScreen extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                backgroundColor: primaryWhiteColor,
+                backgroundColor: AppColors.primaryWhiteColor,
                 expandedHeight: 500,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -152,12 +156,12 @@ class AccounDetailsScreen extends StatelessWidget {
                                   width: 30,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
-                                      color: purpleColor),
+                                      color: AppColors.purpleColor),
                                   child: const Center(
                                       child: Icon(
                                     Icons.edit,
                                     size: 15,
-                                    color: primaryWhiteColor,
+                                    color: AppColors.primaryWhiteColor,
                                   )),
                                 ))
                           ],
@@ -216,7 +220,7 @@ class AccounDetailsScreen extends StatelessWidget {
                           Container(
                             height: getHeight(54),
                             width: getWidth(2),
-                            color: Colors.grey[300],
+                            color: Colors.grey[200],
                           ),
                           Column(
                             children: [
@@ -236,7 +240,7 @@ class AccounDetailsScreen extends StatelessWidget {
                           Container(
                             height: getHeight(54),
                             width: getWidth(2),
-                            color: Colors.grey[300],
+                            color: Colors.grey[200],
                           ),
                           Column(
                             children: [
@@ -296,7 +300,9 @@ class AccounDetailsScreen extends StatelessWidget {
                                 )),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(inboxscreen);
+                            },
                             child: Container(
                                 height: 45,
                                 width: 160,
@@ -309,8 +315,10 @@ class AccounDetailsScreen extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const Icon(Icons.comment,
-                                          size: 18, color: purpleColor),
+                                      SvgPicture.asset(
+                                        "assets/icons/Chat.svg",
+                                        color: AppColors.purpleColor,
+                                      ),
                                       SizedBox(
                                         width: getWidth(16),
                                       ),
@@ -318,7 +326,7 @@ class AccounDetailsScreen extends StatelessWidget {
                                         "Message",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            color: purpleColor,
+                                            color: AppColors.purpleColor,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ],
@@ -333,7 +341,7 @@ class AccounDetailsScreen extends StatelessWidget {
                       Container(
                         height: getHeight(2),
                         width: double.maxFinite,
-                        color: Colors.grey,
+                        color: Colors.grey[200],
                       ),
                     ],
                   ),
@@ -343,14 +351,14 @@ class AccounDetailsScreen extends StatelessWidget {
                 pinned: true,
                 primary: false,
                 elevation: 0,
-                backgroundColor: primaryWhiteColor,
+                backgroundColor: AppColors.primaryWhiteColor,
                 automaticallyImplyLeading: false,
                 title: Align(
                   alignment: AlignmentDirectional.center,
                   child: TabBar(
                       indicatorWeight: 4,
                       isScrollable: true,
-                      indicatorColor: purpleColor,
+                      indicatorColor: AppColors.purpleColor,
                       tabs: [
                         Tab(
                             child: Padding(
@@ -359,14 +367,14 @@ class AccounDetailsScreen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.dashboard,
-                                color: purpleColor,
+                                color: AppColors.purpleColor,
                               ),
                               SizedBox(
                                 width: 12,
                               ),
                               Text(
                                 "Feeds",
-                                style: TextStyle(color: purpleColor),
+                                style: TextStyle(color: AppColors.purpleColor),
                               )
                             ],
                           ),
@@ -375,14 +383,17 @@ class AccounDetailsScreen extends StatelessWidget {
                             child: Padding(
                           padding: const EdgeInsets.all(12),
                           child: Row(
-                            children: const [
-                              Icon(Icons.video_camera_back, color: purpleColor),
-                              SizedBox(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/icons/callV.svg",
+                                color: AppColors.purpleColor,
+                              ),
+                              const SizedBox(
                                 width: 12,
                               ),
-                              Text(
+                              const Text(
                                 "Short",
-                                style: TextStyle(color: purpleColor),
+                                style: TextStyle(color: AppColors.purpleColor),
                               )
                             ],
                           ),
@@ -393,13 +404,13 @@ class AccounDetailsScreen extends StatelessWidget {
                           child: Row(
                             children: const [
                               Icon(Icons.supervisor_account,
-                                  color: purpleColor),
+                                  color: AppColors.purpleColor),
                               SizedBox(
                                 width: 12,
                               ),
                               Text(
                                 "Tag",
-                                style: TextStyle(color: purpleColor),
+                                style: TextStyle(color: AppColors.purpleColor),
                               )
                             ],
                           ),

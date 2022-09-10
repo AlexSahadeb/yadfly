@@ -11,7 +11,7 @@ class LocationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryWhiteColor,
+      backgroundColor: AppColors.primaryWhiteColor,
       body: ListView.builder(
           primary: true,
           itemCount: 30,
@@ -21,11 +21,11 @@ class LocationScreen extends StatelessWidget {
                 Get.toNamed(locationMapScreen);
               },
               leading: const CircleAvatar(
-                backgroundColor: purpleColor,
+                backgroundColor: AppColors.purpleColor,
                 child: Center(
                     child: Icon(
                   Icons.location_on_rounded,
-                  color: primaryWhiteColor,
+                  color: AppColors.primaryWhiteColor,
                 )),
               ),
               title: Text(

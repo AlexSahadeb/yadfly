@@ -6,8 +6,20 @@ import 'package:yadfly/screens/accountsetup/selectedcountry/selected_country_scr
 import 'package:yadfly/screens/forgot/forgot_password.dart';
 import 'package:yadfly/screens/forgot/newpassword/new_password.dart';
 import 'package:yadfly/screens/forgot/verify/verify_screen.dart';
+import 'package:yadfly/screens/inbox/Activity/inbox_activity.dart';
+import 'package:yadfly/screens/inbox/audiocall/audio_call_screen.dart';
+import 'package:yadfly/screens/inbox/inbox_screen.dart';
+import 'package:yadfly/screens/inbox/message/message_screen.dart';
+import 'package:yadfly/screens/inbox/requestmessage/request_message_screen.dart';
+import 'package:yadfly/screens/inbox/videocall/video_call_screen.dart';
 import 'package:yadfly/screens/mainnavbar/components/add/add_screen.dart';
 import 'package:yadfly/screens/mainnavbar/components/home/home_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/components/archive/archive_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/components/qrcode/qrCode_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/components/saved/saved_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/components/setting/settings_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/profileEdit/profile_edit_screen.dart';
+import 'package:yadfly/screens/mainnavbar/components/profie/profile_screen.dart';
 import 'package:yadfly/screens/mainnavbar/components/search/itemsearch/accountdetails/account_details_screen.dart';
 import 'package:yadfly/screens/mainnavbar/components/search/itemsearch/accountdetails/keywordSerachAccount/conponents/hashtag/conponents/hashtag_details_screen.dart';
 import 'package:yadfly/screens/mainnavbar/components/search/itemsearch/accountdetails/keywordSerachAccount/conponents/location/locationMap/location_map_screen.dart';
@@ -45,6 +57,13 @@ const String searchscreen = "/search_screen";
 const String addscreen = "/add_screen";
 const String shortscreen = "/short_screen";
 const String profilescreen = "/profile_screen";
+//profile subscreen
+const String editprofilescreen = "/edit_profile_screen";
+const String settingscreen = "/setting_screen";
+const String archivescreen = "/archive_screen";
+const String qrcodescreen = "/qrcode_screen";
+const String savedscreen = "/saved_screen";
+
 //Search Daegate
 const String searchDalegate = "/search_dalegate_screen";
 const String mainsearchaccount = "/mainsearchaccount_screen";
@@ -52,6 +71,14 @@ const String hashTagDetailsScreen = "/hashTagDetails_Screen";
 const String locationMapScreen = "/location_map_screen";
 //Search Details
 const String accountdetails = "/account_details_screen";
+
+//Inbox Screen
+const String inboxscreen = "/inbox_screen";
+const String inboxActivityScreen = "/inboxActivity_Screen";
+const String requestMessage = "/request_message";
+const String messagescreen = "/message_screen";
+const String videocall = "/videocall_screen";
+const String audiocall = "/audiocall_screen";
 
 List<GetPage> getPage = [
   GetPage(name: splash, page: () => const SplashScreen()),
@@ -73,12 +100,27 @@ List<GetPage> getPage = [
   GetPage(name: homescreen, page: () => const HomeScreen()),
   GetPage(name: searchscreen, page: () => SearchScreen()),
   GetPage(name: addscreen, page: () => const AddScreen()),
-  GetPage(name: shortscreen, page: () => const ShortsScreen()),
+  GetPage(name: shortscreen, page: () => ShortsScreen()),
+  GetPage(name: profilescreen, page: () => ProfileScreen()),
+  //profie subscreen
+  GetPage(name: editprofilescreen, page: () => ProfileEditScreen()),
+  GetPage(name: settingscreen, page: () => SettingScreen()),
+  GetPage(name: archivescreen, page: () => const ArchiveScreen()),
+  GetPage(name: qrcodescreen, page: () => const QRCodeScreen()),
+  GetPage(name: savedscreen, page: () => SavedScreen()),
   //Search Daegate
   GetPage(name: searchDalegate, page: () => SearchDalegateScreen()),
   GetPage(name: mainsearchaccount, page: () => MainSearchAccountScreen()),
-  GetPage(name: hashTagDetailsScreen, page: () => HashTagDetailsScreen()),
+  GetPage(name: hashTagDetailsScreen, page: () => const HashTagDetailsScreen()),
   GetPage(name: locationMapScreen, page: () => LocationMapScreen()),
   //Search Details
   GetPage(name: accountdetails, page: () => AccounDetailsScreen()),
+  //Inbox Screen
+  GetPage(name: inboxscreen, page: () => const InboxScreen()),
+
+  GetPage(name: requestMessage, page: () => const RequestMessageScreen()),
+  GetPage(name: inboxActivityScreen, page: () => InboxActivityScreen()),
+  GetPage(name: messagescreen, page: () => MessageScreen()),
+  GetPage(name: videocall, page: () => const VideoCallScreen()),
+  GetPage(name: audiocall, page: () => const AudioCallScreen())
 ];

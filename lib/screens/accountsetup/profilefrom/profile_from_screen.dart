@@ -69,7 +69,7 @@ class ProfileFromScreen extends StatelessWidget {
                             child: GestureDetector(
                                 onTap: () => chooseImageFromGallary(),
                                 child: CircleAvatar(
-                                  backgroundColor: primaryWhiteColor,
+                                  backgroundColor: AppColors.primaryWhiteColor,
                                   child: ClipOval(
                                     child: SizedBox(
                                         height: 180,
@@ -97,12 +97,12 @@ class ProfileFromScreen extends StatelessWidget {
                           width: 30,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: purpleColor),
+                              color: AppColors.purpleColor),
                           child: const Center(
                               child: Icon(
                             Icons.edit,
                             size: 15,
-                            color: primaryWhiteColor,
+                            color: AppColors.primaryWhiteColor,
                           )),
                         ))
                   ],
@@ -223,150 +223,14 @@ class ProfileFromScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: CustomButton(
-            color: purpleColor,
-            textColor: primaryWhiteColor,
+            color: AppColors.purpleColor,
+            textColor: AppColors.primaryWhiteColor,
             buttonText: "Continue",
             onPressed: () {
               //if (_formKey.currentState!.validate()) {
               Get.toNamed(category);
               //}
             }),
-      ),
-    );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.red,
-            toolbarHeight: 500,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-                Text("data"),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) => Column(
-                  children: [
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                    Text("data"),
-                  ],
-                )),
-          )
-        ],
       ),
     );
   }

@@ -33,7 +33,7 @@ class MainNavBarScreen extends StatelessWidget {
           onTap: mainNavBarController.changeTabIndex,
           currentIndex: mainNavBarController.tabIndex,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: primaryWhiteColor,
+          backgroundColor: AppColors.primaryWhiteColor,
           elevation: 0,
           items: const [
             BottomNavigationBarItem(
@@ -44,13 +44,13 @@ class MainNavBarScreen extends StatelessWidget {
               icon: SizedBox(
                 child: Material(
                   elevation: 0,
-                  color: purpleColor,
+                  color: AppColors.purpleColor,
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Padding(
                     padding: EdgeInsets.all(12.0),
                     child: Icon(
                       Icons.add,
-                      color: primaryWhiteColor,
+                      color: AppColors.primaryWhiteColor,
                     ),
                   ),
                 ),

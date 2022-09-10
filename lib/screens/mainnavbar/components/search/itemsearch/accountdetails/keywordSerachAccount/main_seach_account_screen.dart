@@ -19,7 +19,7 @@ class MainSearchAccountScreen extends StatelessWidget {
         length: 4,
         initialIndex: 2,
         child: Scaffold(
-          backgroundColor: primaryWhiteColor,
+          backgroundColor: AppColors.primaryWhiteColor,
           body: Padding(
             padding: const EdgeInsets.all(20.0),
             child: SingleChildScrollView(
@@ -42,12 +42,12 @@ class MainSearchAccountScreen extends StatelessWidget {
                     height: getHeight(20),
                   ),
                   const ColoredBox(
-                    color: primaryWhiteColor,
+                    color: AppColors.primaryWhiteColor,
                     child: TabBar(
                         unselectedLabelColor: Colors.grey,
-                        indicatorColor: purpleColor,
+                        indicatorColor: AppColors.purpleColor,
                         indicatorWeight: 3,
-                        labelColor: purpleColor,
+                        labelColor: AppColors.purpleColor,
                         tabs: [
                           Tab(
                             icon: Icon(Icons.dashboard),
@@ -68,8 +68,8 @@ class MainSearchAccountScreen extends StatelessWidget {
                     child: TabBarView(children: [
                       DeshboardScreen(),
                       ParsonScreen(),
-                      HashtagScreen(),
-                      LocationScreen(),
+                      const HashtagScreen(),
+                      const LocationScreen(),
                     ]),
                   ),
                 ],

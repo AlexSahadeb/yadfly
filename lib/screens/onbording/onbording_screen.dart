@@ -85,7 +85,8 @@ class OnBordingScreen extends StatelessWidget {
                         dotsCount: onBodingController.onbodingImgs.length,
                         position: onBodingController.currentIndex.toDouble(),
                         decorator: const DotsDecorator(
-                            activeColor: purpleColor, color: buttonShapColor),
+                            activeColor: AppColors.purpleColor,
+                            color: AppColors.buttonShapColor),
                       ),
                     ),
                   ),
@@ -96,8 +97,8 @@ class OnBordingScreen extends StatelessWidget {
 
                   CustomButton(
                     buttonText: "Next",
-                    textColor: primaryWhiteColor,
-                    color: purpleColor,
+                    textColor: AppColors.primaryWhiteColor,
+                    color: AppColors.purpleColor,
                     onPressed: () {
                       if (onBodingController.currentIndex == 2) {
                         // go to login page
@@ -112,8 +113,8 @@ class OnBordingScreen extends StatelessWidget {
                   ),
                   CustomButton(
                     buttonText: "Skip",
-                    textColor: purpleColor,
-                    color: buttonShapColor,
+                    textColor: AppColors.purpleColor,
+                    color: AppColors.buttonShapColor,
                     onPressed: () {
                       Get.toNamed(welcome);
                     },

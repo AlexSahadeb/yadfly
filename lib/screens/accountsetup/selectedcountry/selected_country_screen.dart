@@ -31,12 +31,12 @@ class SelectedCountryScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: primaryWhiteColor,
+        color: AppColors.primaryWhiteColor,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           child: CustomButton(
-              color: brightLilacColor,
-              textColor: primaryWhiteColor,
+              color: AppColors.brightLilacColor,
+              textColor: AppColors.primaryWhiteColor,
               buttonText: "Continue",
               onPressed: () {
                 Get.toNamed(profilefrom);
@@ -120,12 +120,12 @@ class SelectedCountryScreen extends StatelessWidget {
                                           selectedCountryController.check.value
                                               ? Icon(
                                                   Icons.circle_outlined,
-                                                  color: purpleColor,
+                                                  color: AppColors.purpleColor,
                                                   size: getFont(20),
                                                 )
                                               : Icon(
                                                   Icons.circle,
-                                                  color: purpleColor,
+                                                  color: AppColors.purpleColor,
                                                   size: getFont(20),
                                                 )),
                                 ),

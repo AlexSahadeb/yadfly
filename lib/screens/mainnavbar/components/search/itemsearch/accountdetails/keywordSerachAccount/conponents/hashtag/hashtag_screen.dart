@@ -10,7 +10,7 @@ class HashtagScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryWhiteColor,
+      backgroundColor: AppColors.primaryWhiteColor,
       body: ListView.builder(
           itemCount: 30,
           itemBuilder: (BuildContext context, index) {
@@ -19,11 +19,11 @@ class HashtagScreen extends StatelessWidget {
                 Get.toNamed(hashTagDetailsScreen);
               },
               leading: const CircleAvatar(
-                backgroundColor: purpleColor,
+                backgroundColor: AppColors.purpleColor,
                 child: Center(
                     child: Icon(
                   Icons.tag,
-                  color: primaryWhiteColor,
+                  color: AppColors.primaryWhiteColor,
                 )),
               ),
               title: Text(

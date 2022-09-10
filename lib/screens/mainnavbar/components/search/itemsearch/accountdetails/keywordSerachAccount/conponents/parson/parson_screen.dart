@@ -36,14 +36,15 @@ class ParsonScreen extends StatelessWidget {
                     height: 30,
                     width: 70,
                     decoration: BoxDecoration(
-                      color: purpleColor,
+                      color: AppColors.purpleColor,
                       borderRadius: BorderRadius.circular(30),
-                      border: Border.all(width: 2, color: purpleColor),
+                      border:
+                          Border.all(width: 2, color: AppColors.purpleColor),
                     ),
                     child: const Center(
                       child: Text(
                         "Follow",
-                        style: TextStyle(color: primaryWhiteColor),
+                        style: TextStyle(color: AppColors.primaryWhiteColor),
                       ),
                     ),
                   ),

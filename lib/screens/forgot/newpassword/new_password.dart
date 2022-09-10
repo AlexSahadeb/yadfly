@@ -89,7 +89,7 @@ class NewPassword extends StatelessWidget {
                             size: 15,
                             color: raisinBlackColor,
                           ),
-                          fillColor: inputFillColor,
+                          fillColor: AppColors.inputFillColor,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Please enter your new password";
@@ -134,7 +134,7 @@ class NewPassword extends StatelessWidget {
                             size: 15,
                             color: raisinBlackColor,
                           ),
-                          fillColor: inputFillColor,
+                          fillColor: AppColors.inputFillColor,
                         ),
                       ),
                       SizedBox(
@@ -147,8 +147,8 @@ class NewPassword extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           side: MaterialStateBorderSide.resolveWith(
-                            (states) =>
-                                const BorderSide(width: 2, color: purpleColor),
+                            (states) => const BorderSide(
+                                width: 2, color: AppColors.purpleColor),
                           ),
                           onChanged: (value) {
                             if (_newPasswordController.valueChack.value ==
@@ -162,7 +162,7 @@ class NewPassword extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.w600, fontSize: 15)),
                           controlAffinity: ListTileControlAffinity.leading,
-                          activeColor: purpleColor,
+                          activeColor: AppColors.purpleColor,
                         ),
                       ),
                     ],
@@ -172,11 +172,11 @@ class NewPassword extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: primaryWhiteColor,
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+        color: AppColors.primaryWhiteColor,
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: CustomButton(
-            color: purpleColor,
-            textColor: primaryWhiteColor,
+            color: AppColors.purpleColor,
+            textColor: AppColors.primaryWhiteColor,
             buttonText: "Verify",
             onPressed: () {
               if (_formKey.currentState!.validate()) {
@@ -198,7 +198,7 @@ class NewPassword extends StatelessWidget {
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 24,
-                                color: purpleColor),
+                                color: AppColors.purpleColor),
                           ),
                           SizedBox(
                             height: getHeight(16),
@@ -212,8 +212,8 @@ class NewPassword extends StatelessWidget {
                             height: getHeight(30),
                           ),
                           CustomButton(
-                              color: purpleColor,
-                              textColor: primaryWhiteColor,
+                              color: AppColors.purpleColor,
+                              textColor: AppColors.primaryWhiteColor,
                               buttonText: "Go to HomePages",
                               onPressed: () {
                                 Get.toNamed(mainNavbar);

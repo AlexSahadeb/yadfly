@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
             flex: 1,
             child: Center(
               child: SpinKitCircle(
-                color: purpleColor,
+                color: AppColors.purpleColor,
                 size: 60.0,
               ),
             ))

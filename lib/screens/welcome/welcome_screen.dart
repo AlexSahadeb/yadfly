@@ -95,8 +95,8 @@ class WelcomeScreen extends StatelessWidget {
                     height: getHeight(50),
                   ),
                   CustomButton(
-                      color: purpleColor,
-                      textColor: primaryWhiteColor,
+                      color: AppColors.purpleColor,
+                      textColor: AppColors.primaryWhiteColor,
                       buttonText: "Sign in with password",
                       onPressed: () {
                         Get.toNamed(signin);
@@ -112,7 +112,8 @@ class WelcomeScreen extends StatelessWidget {
                       TextSpan(
                           text: "Sign up",
                           style: const TextStyle(
-                              color: purpleColor, fontWeight: FontWeight.bold),
+                              color: AppColors.purpleColor,
+                              fontWeight: FontWeight.bold),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               //print('Sign up');

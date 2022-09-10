@@ -24,8 +24,8 @@ class ForgotPasswordMethodScreen extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           child: CustomButton(
-              color: purpleColor,
-              textColor: primaryWhiteColor,
+              color: AppColors.purpleColor,
+              textColor: AppColors.primaryWhiteColor,
               buttonText: "Continue",
               onPressed: () {
                 print("Continue");

@@ -20,8 +20,11 @@ TextStyle headdingFour = TextStyle(
     fontSize: getFont(16),
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w400,
-    color: graniteColor);
-TextStyle headdingFive = TextStyle();
+    color: AppColors.graniteColor);
+TextStyle headdingFive = TextStyle(
+    fontSize: getFont(18),
+    fontWeight: FontWeight.w700,
+    color: raisinBlackColor);
 TextStyle headding6 = TextStyle(
     fontSize: getFont(16),
     fontWeight: FontWeight.w700,

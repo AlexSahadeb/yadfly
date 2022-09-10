@@ -66,7 +66,7 @@ class VerifyScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(3),
                               borderSide: const BorderSide(
-                                  color: purpleColor, width: 2))),
+                                  color: AppColors.purpleColor, width: 2))),
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
                         FilteringTextInputFormatter.digitsOnly
@@ -85,7 +85,7 @@ class VerifyScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(3),
                               borderSide: const BorderSide(
-                                  color: purpleColor, width: 2))),
+                                  color: AppColors.purpleColor, width: 2))),
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
                         FilteringTextInputFormatter.digitsOnly
@@ -104,7 +104,7 @@ class VerifyScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(3),
                               borderSide: const BorderSide(
-                                  color: purpleColor, width: 2))),
+                                  color: AppColors.purpleColor, width: 2))),
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
                         FilteringTextInputFormatter.digitsOnly
@@ -123,7 +123,7 @@ class VerifyScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(3),
                               borderSide: const BorderSide(
-                                  color: purpleColor, width: 2))),
+                                  color: AppColors.purpleColor, width: 2))),
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(1),
                         FilteringTextInputFormatter.digitsOnly
@@ -146,7 +146,7 @@ class VerifyScreen extends StatelessWidget {
                           fontSize: 16,
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.w400,
-                          color: purpleColor),
+                          color: AppColors.purpleColor),
                     )
                   ]),
                 ),
@@ -159,11 +159,11 @@ class VerifyScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: primaryWhiteColor,
+        color: AppColors.primaryWhiteColor,
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: CustomButton(
-            color: purpleColor,
-            textColor: primaryWhiteColor,
+            color: AppColors.purpleColor,
+            textColor: AppColors.primaryWhiteColor,
             buttonText: "Verify",
             onPressed: () {
               Get.toNamed(newpassword);
