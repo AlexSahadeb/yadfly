@@ -24,31 +24,47 @@ class ParsonScreen extends StatelessWidget {
                   radius: 25,
                 ),
                 title: Text(
-                  "angllinaa",
+                  "angllina",
                   style: headding6,
                 ),
                 subtitle: const Text(
                   "Web Designer",
                 ),
-                trailing: GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    height: 30,
-                    width: 70,
-                    decoration: BoxDecoration(
-                      color: AppColors.purpleColor,
-                      borderRadius: BorderRadius.circular(30),
-                      border:
-                          Border.all(width: 2, color: AppColors.purpleColor),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Follow",
-                        style: TextStyle(color: AppColors.primaryWhiteColor),
+                trailing: Obx(
+                      () => GestureDetector(
+                    onTap: () {
+                      parsonController.isValue++;
+                      parsonController.onFollowing.value =
+                      !parsonController.onFollowing.value;
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: parsonController.onFollowing.value
+                            ? AppColors.purpleColor
+                            : Colors.green,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                            width: 2,
+                            color:
+                            parsonController.onFollowing.value
+                                ? AppColors.primaryWhiteColor
+                                : AppColors.primaryWhiteColor),
+                      ),
+                      child: Center(
+                        child: Text(
+                          parsonController.onFollowing.value
+                              ? "Follow"
+                              : "Following",
+                          style: const TextStyle(
+                              color: AppColors.primaryWhiteColor),
+                        ),
                       ),
                     ),
                   ),
-                ));
+                )
+             );
           }),
     );
   }

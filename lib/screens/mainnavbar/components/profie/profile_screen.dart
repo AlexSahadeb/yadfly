@@ -134,7 +134,7 @@ class ProfileScreen extends StatelessWidget {
                                   )),
                               ListTile(
                                   onTap: () {
-                                    print('Favorites');
+                                    Get.toNamed(favoritesScreen);
                                   },
                                   leading: SvgPicture.asset(
                                       "assets/icons/Heart_outline.svg"),
@@ -301,7 +301,7 @@ class ProfileScreen extends StatelessWidget {
                         width: double.maxFinite,
                         color: Colors.grey[200],
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 24,
                       ),
                       Container(

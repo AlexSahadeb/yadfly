@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
 class ParsonController extends GetxController {
-  var onFollow = true.obs;
+  var onFollowing = true.obs;
+  var isValue =0;
+
 }

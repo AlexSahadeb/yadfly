@@ -34,6 +34,10 @@ import 'package:yadfly/screens/signup/signup_screen.dart';
 import 'package:yadfly/screens/splash/splash_screen.dart';
 import 'package:yadfly/screens/welcome/welcome_screen.dart';
 
+import '../screens/mainnavbar/components/profie/components/favorites/profile_favarites_screen.dart';
+
+
+
 const String splash = "/splash_screen";
 const String onbording = "/onbording_screen";
 const String welcome = "/welcome_screen";
@@ -63,12 +67,14 @@ const String settingscreen = "/setting_screen";
 const String archivescreen = "/archive_screen";
 const String qrcodescreen = "/qrcode_screen";
 const String savedscreen = "/saved_screen";
+const String favoritesScreen ="/favorites_screen";
 
 //Search Daegate
 const String searchDalegate = "/search_dalegate_screen";
 const String mainsearchaccount = "/mainsearchaccount_screen";
 const String hashTagDetailsScreen = "/hashTagDetails_Screen";
 const String locationMapScreen = "/location_map_screen";
+
 //Search Details
 const String accountdetails = "/account_details_screen";
 
@@ -79,6 +85,8 @@ const String requestMessage = "/request_message";
 const String messagescreen = "/message_screen";
 const String videocall = "/videocall_screen";
 const String audiocall = "/audiocall_screen";
+
+
 
 List<GetPage> getPage = [
   GetPage(name: splash, page: () => const SplashScreen()),
@@ -108,6 +116,7 @@ List<GetPage> getPage = [
   GetPage(name: archivescreen, page: () => const ArchiveScreen()),
   GetPage(name: qrcodescreen, page: () => const QRCodeScreen()),
   GetPage(name: savedscreen, page: () => SavedScreen()),
+  GetPage(name: favoritesScreen, page: ()=>ProfileFavoritesScreen()),
   //Search Daegate
   GetPage(name: searchDalegate, page: () => SearchDalegateScreen()),
   GetPage(name: mainsearchaccount, page: () => MainSearchAccountScreen()),
